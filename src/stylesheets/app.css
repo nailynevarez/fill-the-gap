@@ -1,0 +1,39 @@
+body {
+
+}
+
+.scrolling-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  white-space: nowrap;
+
+}
+
+.scrolling-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  flex: 0 0 auto;
+  margin-right: 200px;
+}
+
+
+main {
+  height: 15vh;
+  opacity: 0;
+}
+
+main:hover {
+  align-items: center;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  margin-left: 50%;
+  min-height:15vh;
+  opacity: 1;
+  width: 50%;
+}
