@@ -20,20 +20,45 @@ body {
 }
 
 
-main {
+/* main .navs{
   height: 15vh;
   opacity: 0;
+} */
+
+.logo img {
+  margin-top: 2%;
+  margin-left: 2%;
+  width: 200px;
+  height: 80px;
+  opacity: 1;
 }
 
-main:hover {
+main {
   align-items: center;
-
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-around;
-  margin-left: 50%;
+  justify-content: space-between;
   min-height:15vh;
   opacity: 1;
-  width: 50%;
+  margin-left: 1%;
+  margin-right: 3%;
+}
+
+/* main:hover nav {
+  opacity: 1;
+}*/
+
+main .navs {
+  display: none;
+  flex-direction: row;
+}
+
+main:hover .navs {
+  display: flex;
+  flex-direction: row;
+}
+
+main .navs nav {
+  margin-left: 50px;
 }

@@ -1,11 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './logo.png';
 import './stylesheets/app.css';
 import About from './About.js';
 import First from './First.js';
 import Second from './Second.js';
 import Third from './Third.js';
 import Fourth from './Fourth.js';
+
 
 class App extends React.Component {
   constructor(props){
@@ -37,10 +38,19 @@ render() {
       }
   return (
     <div>
+
+
       <main>
+
+      <div className ="logo">
+        <img src={logo}/>
+      </div>
+
+      <div className = "navs">
         <nav>Home</nav>
         <nav>About</nav>
         <nav>Get Involved</nav>
+      </div>
       </main>
       {component}
       <div className="scrolling-wrapper">
