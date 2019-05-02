@@ -6,6 +6,18 @@ import First from './First.js';
 import Second from './Second.js';
 import Third from './Third.js';
 import Fourth from './Fourth.js';
+import Tri1Empty from './Tri1Empty.png';
+import Tri2Empty from './Tri2Empty.png';
+import Tri3Empty from './Tri3Empty.png';
+import Tri4Empty from './Tri4Empty.png';
+import Tri5Empty from './Tri5Empty.png';
+import Tri6Empty from './Tri6Empty.png';
+import Tri1Full from './Tri1Full.png';
+import Tri2Full from './Tri2Full.png';
+import Tri3Full from './Tri3Full.png';
+import Tri4Full from './Tri4Full.png';
+import Tri5Full from './Tri5Full.png';
+import Tri6Full from './TriFull6.png';
 
 
 class App extends React.Component {
@@ -14,7 +26,21 @@ class App extends React.Component {
     this.state = {
       activePage: 'fourth',
     };
+    this.myDivToFocus = React.createRef()
   }
+
+
+
+
+  handleOnClick = (event) => {
+        //.current is verification that your element has rendered
+        if(this.myDivToFocus.current){
+            this.myDivToFocus.current.scrollIntoView({
+               behavior: "smooth",
+               block: "nearest"
+            })
+        }
+    }
 
 render() {
   let component = null;
@@ -47,23 +73,31 @@ render() {
       </div>
 
       <div className = "navs">
-        <nav>Home</nav>
-        <nav>About</nav>
-        <nav>Get Involved</nav>
+        <nav><a>Home</a></nav>
+        <nav><a>About</a></nav>
+        <nav><a>Get Involved</a></nav>
       </div>
       </main>
-      {component}
-      <div className="scrolling-wrapper">
-        <div className="card"><h2>Card1</h2></div>
-        <div className="card"><h2>Card2</h2></div>
-        <div className="card"><h2>Card3</h2></div>
-        <div className="card"><h2>Card4</h2></div>
-        <div className="card"><h2>Card5</h2></div>
-        <div className="card"><h2>Card6</h2></div>
-        <div className="card"><h2>Card</h2></div>
-        <div className="card"><h2>Card</h2></div>
-        <div className="card"><h2>Card</h2></div>
+
+      <div className = "first-row">
+        <img className ="Tri6Empty" src={Tri6Empty} onClick={this.handleOnClick.bind(this)}/>
+        <img className ="Tri1Empty" src={Tri1Empty}/>
+        <img className ="Tri2Empty" src={Tri2Empty}/>
       </div>
+
+      <div className = "second-row">
+
+
+        <img className ="Tri5Empty" src={Tri5Empty}/>
+        <img className ="Tri4Empty" src={Tri4Empty}/>
+        <img className ="Tri3Empty" src={Tri3Empty}/>
+     </div>
+
+
+     <div ref={this.myDivToFocus}>
+        <p>This is a test.</p>
+     </div>
+
 
     </div>
   );
