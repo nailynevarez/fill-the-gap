@@ -30,6 +30,7 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
+      Tri1Done: false,
       activePage: 'fourth',
       isTealActive: true,
       isAppActive: true,
@@ -38,9 +39,12 @@ class App extends React.Component {
       AValue: '',
       AQuestion: true,
       AAnswer: false,
+      isHexActive: true,
+      showHex: true,
+      isAActive: false,
+      showA: false,
     };
-    this.aspiration = React.createRef()
-    this.goBack = React.createRef()
+
   }
 
 
@@ -53,16 +57,24 @@ class App extends React.Component {
    }
 
 
-  handleOnClick = (event) => {
-        //.current is verification that your element has rendered
+  handleAClick = (event) => {
+    this.setState({
+      isHexActive: false,
 
-        if(this.aspiration.current){
-            this.aspiration.current.scrollIntoView( {
-               behavior: "smooth",
-               block: "center",
-               inline: "center"
-            })
-        }
+    });
+
+    setTimeout(() => {
+      this.setState({
+        showHex: false,
+      });
+    }, 500);
+
+    setTimeout(() => {
+      this.setState({
+        showA: true,
+          isAActive: true,
+      });
+    }, 1000);
     }
 
   handleIntroButtonClick = (event) => {
@@ -90,12 +102,25 @@ class App extends React.Component {
   }
 
   handleGoBackClick = (event) => {
-    if(this.goBack.current){
-        this.goBack.current.scrollIntoView({
-           behavior: "smooth",
-           block: "nearest"
-        })
-    }
+    this.setState({
+      isAActive: false,
+
+
+    });
+
+    setTimeout(() => {
+      this.setState({
+
+        showA: false,
+      });
+    }, 500);
+
+    setTimeout(() => {
+      this.setState({
+          showHex: true,
+          isHexActive: true,
+      });
+    }, 1000);
   }
 
 
@@ -109,6 +134,7 @@ class App extends React.Component {
   handleAValueSubmit = (event) => {
     this.setState({
       AQuestion: false,
+      Tri1Done: true,
     });
 
     setTimeout(() => {
@@ -192,25 +218,29 @@ render() {
         <nav><a>Get Involved</a></nav>
       </div>
       </main>
-    <div className = "scrollingDiv">
 
-      <div className = "first-row" ref = {this.goBack}>
-        <img alt = ""  className ="Tri6Empty" src={Tri6Empty} onClick={this.handleOnClick.bind(this)}/>
-        <img alt = "" className ="Tri1Empty" src={Tri1Empty}/>
+      {this.state.showHex ?
+    <div className = "scrollingDiv">
+    <div className = {this.state.isHexActive ? 'fadeIn' : 'fadeOut'}>
+      <div className = "first-row">
+        <img alt = ""  className ="Tri6Empty" src={Tri6Empty} />
+        {this.state.Tri1Done ? <img alt = "" className ="Tri1Full" src={Tri1Full} onClick={this.handleAClick.bind(this)}/> : <img alt = "" className ="Tri1Empty" src={Tri1Empty} onClick={this.handleAClick.bind(this)}/>}
         <img alt = "" className ="Tri2Empty" src={Tri2Empty}/>
       </div>
 
-      <div className = "second-row">
+
+        <div className = "second-row">
 
         <img alt = "" className ="Tri5Empty" src={Tri5Empty}/>
         <img alt = "" className ="Tri4Empty" src={Tri4Empty}/>
         <img alt = "" className ="Tri3Empty" src={Tri3Empty}/>
-     </div>
-
-
-
-     <div className = "aspirationDiv" ref={this.aspiration}>
-
+        </div>
+        </div>
+      </div>
+      : null }
+        {this.state.showA ?
+        <div className = {this.state.isAActive ? 'fadeIn' : 'fadeOut'}>
+        <div className = "aspirationDiv">
           {this.state.AQuestion ?<p>What is a hope/dream of yours?</p> :null}
           {this.state.AQuestion ?<input placeholder = "Type here." type = "text" value = {this.state.AValue} onChange = {this.handleAValueChange.bind(this)}/> :null}
          {this.state.AQuestion ? <img className = "AButton" src = {AButton} onClick = {this.handleAValueSubmit.bind(this)}/> :null}
@@ -220,13 +250,13 @@ render() {
            <p className = "ATitle">ASPIRATIONAL</p>
            <p className = "AAnswer">{this.state.AValue}</p>
            <img className = "ADefinition" src= {ADefinition}/>
-           <p className = "returnText" onClick = {this.handleGoBackClick.bind(this)}> <i class="left"></i> RETURN TO MODEL </p> 
+           <p className = "returnText" onClick = {this.handleGoBackClick.bind(this)}> <i class="left"></i> RETURN TO MODEL </p>
            </div>
            : null}
-     </div>
+        </div>
+        </div>
+        : null}
 
-
-     </div>
      </div>
      : null}
     </div>

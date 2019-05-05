@@ -70,8 +70,8 @@ html {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-top: -40%;
-  margin-left: 200%;
+  margin-top: 15%;
+  margin-left: 0%;
   font-size: 55px;
 
   height: 60%;
@@ -243,6 +243,16 @@ main .navs nav {
 }
 
 .Tri1Empty {
+  height: 17% + 1vh;
+  width: 15%;
+  /* margin-left: 40%;
+  margin-top: 11%;*/
+  position: absolute;
+  opacity: 1;
+  transition:  opacity .5s ease 0s;
+}
+
+.Tri1Full {
   height: 17% + 1vh;
   width: 15%;
   /* margin-left: 40%;
