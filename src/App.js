@@ -22,6 +22,8 @@ import TealBackground from './TealBackground.png';
 import IntroButton from './ETMButton.png';
 import Statement from './BeginningStatement.png';
 import IntroTitle from './TitleCW.png';
+import AButton from './AButton.png';
+import ADefinition from './ADefinition.png';
 
 
 class App extends React.Component {
@@ -30,11 +32,14 @@ class App extends React.Component {
     this.state = {
       activePage: 'fourth',
       isTealActive: true,
-      isAppActive: false,
+      isAppActive: true,
       isIntroButton: false,
-      isIntroSlideActive: true,
+      isIntroSlideActive: false,
+      AValue: '',
+      AQuestion: true,
+      AAnswer: false,
     };
-    this.myDivToFocus = React.createRef()
+    this.aspiration = React.createRef()
     this.goBack = React.createRef()
   }
 
@@ -50,10 +55,12 @@ class App extends React.Component {
 
   handleOnClick = (event) => {
         //.current is verification that your element has rendered
-        if(this.myDivToFocus.current){
-            this.myDivToFocus.current.scrollIntoView({
+
+        if(this.aspiration.current){
+            this.aspiration.current.scrollIntoView( {
                behavior: "smooth",
-               block: "nearest"
+               block: "center",
+               inline: "center"
             })
         }
     }
@@ -89,6 +96,30 @@ class App extends React.Component {
            block: "nearest"
         })
     }
+  }
+
+
+  handleAValueChange = (event) => {
+    this.setState({
+      AValue: event.target.value
+    });
+    console.log(this.state.AValue);
+  }
+
+  handleAValueSubmit = (event) => {
+    this.setState({
+      AQuestion: false,
+    });
+
+    setTimeout(() => {
+      this.setState({
+        AAnswer: true,
+      });
+    }, 500);
+  }
+
+  handleReturnText = (event) => {
+
   }
 
 
@@ -163,14 +194,13 @@ render() {
       </main>
     <div className = "scrollingDiv">
 
-      <div className = "first-row">
-        <img alt = "" ref = {this.goBack} className ="Tri6Empty" src={Tri6Empty} onClick={this.handleOnClick.bind(this)}/>
+      <div className = "first-row" ref = {this.goBack}>
+        <img alt = ""  className ="Tri6Empty" src={Tri6Empty} onClick={this.handleOnClick.bind(this)}/>
         <img alt = "" className ="Tri1Empty" src={Tri1Empty}/>
         <img alt = "" className ="Tri2Empty" src={Tri2Empty}/>
       </div>
 
       <div className = "second-row">
-
 
         <img alt = "" className ="Tri5Empty" src={Tri5Empty}/>
         <img alt = "" className ="Tri4Empty" src={Tri4Empty}/>
@@ -178,9 +208,23 @@ render() {
      </div>
 
 
-     <div className = "testDiv" ref={this.myDivToFocus}>
-        <p onClick = {this.handleGoBackClick.bind(this)}>This is a test.</p>
+
+     <div className = "aspirationDiv" ref={this.aspiration}>
+
+          {this.state.AQuestion ?<p>What is a hope/dream of yours?</p> :null}
+          {this.state.AQuestion ?<input placeholder = "Type here." type = "text" value = {this.state.AValue} onChange = {this.handleAValueChange.bind(this)}/> :null}
+         {this.state.AQuestion ? <img className = "AButton" src = {AButton} onClick = {this.handleAValueSubmit.bind(this)}/> :null}
+
+         {this.state.AAnswer ?
+           <div className = {this.state.AAnswer ? 'fadeIn' : 'fadeOut'}>
+           <p className = "ATitle">ASPIRATIONAL</p>
+           <p className = "AAnswer">{this.state.AValue}</p>
+           <img className = "ADefinition" src= {ADefinition}/>
+           <p className = "returnText" onClick = {this.handleGoBackClick.bind(this)}> <i class="left"></i> RETURN TO MODEL </p> 
+           </div>
+           : null}
      </div>
+
 
      </div>
      </div>

@@ -1,6 +1,6 @@
 body {
   font-family: vinyl, sans-serif;
-
+  color: #181818;
 }
 
 html {
@@ -66,17 +66,89 @@ html {
 
 
 
-.testDiv {
-  margin-top: -30%;
+.aspirationDiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: -40%;
   margin-left: 200%;
   font-size: 55px;
-  background-color: red;
-  height: 10%;
-  width: 10%;
-  position: absolute;
 
+  height: 60%;
+  width: 100%;
+  position: absolute;
+}
+.aspirationDiv input {
+  width: 60%;
+  height: 20%;
+  margin-left: 20%;
+  font-size:25px;
+  font-family: vinyl, sans-serif;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
 }
 
+.aspirationDiv input:focus {
+  outline: 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+}
+
+.aspirationDiv input::placeholder {
+  margin: 0px;
+  color: #BEBEBE;
+}
+.aspirationDiv p {
+  height: 10%;
+  width: 100%;
+  text-align: center;
+}
+
+.AButton {
+  margin-top: 5%;
+  margin-left: 70%;
+  height: 10%;
+  width: 10%;
+  opacity: .5;
+  transition:  opacity .5s ease 0s;
+}
+
+.AButton:hover{
+  opacity: 1;
+  transition:  opacity .5s ease 0s;
+}
+
+.ATitle {
+  margin-top: 10%;
+  margin-bottom: 0;
+  color: #f24822;
+}
+
+.AAnswer {
+  font-size: .5em;
+  color: #BEBEBE;
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+
+.ADefinition {
+  height: 50%;
+  width: 50%;
+  margin-left: 25%;
+}
+
+.returnText {
+  font-size: .3em;
+  opacity: 1;
+  transition:  opacity .5s ease 0s;
+}
+
+.returnText:hover {
+  opacity: .5;
+  transition:  opacity .5s ease 0s;
+}
 
 
 
@@ -162,13 +234,12 @@ main .navs nav {
   margin-top: 20%;
   display: flex;
   justify-content: space-around;
-
 }
 
 .second-row {
   display: flex;
   justify-content: space-around;
-  margin-top: .55%;
+  margin-top: .50%;
 }
 
 .Tri1Empty {
