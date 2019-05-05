@@ -35,6 +35,7 @@ class App extends React.Component {
       isIntroSlideActive: true,
     };
     this.myDivToFocus = React.createRef()
+    this.goBack = React.createRef()
   }
 
 
@@ -79,6 +80,15 @@ class App extends React.Component {
 
   handleAboutClick = (event) => {
 
+  }
+
+  handleGoBackClick = (event) => {
+    if(this.goBack.current){
+        this.goBack.current.scrollIntoView({
+           behavior: "smooth",
+           block: "nearest"
+        })
+    }
   }
 
 
@@ -151,9 +161,10 @@ render() {
         <nav><a>Get Involved</a></nav>
       </div>
       </main>
+    <div className = "scrollingDiv">
 
       <div className = "first-row">
-        <img alt = "" className ="Tri6Empty" src={Tri6Empty} onClick={this.handleOnClick.bind(this)}/>
+        <img alt = "" ref = {this.goBack} className ="Tri6Empty" src={Tri6Empty} onClick={this.handleOnClick.bind(this)}/>
         <img alt = "" className ="Tri1Empty" src={Tri1Empty}/>
         <img alt = "" className ="Tri2Empty" src={Tri2Empty}/>
       </div>
@@ -168,9 +179,10 @@ render() {
 
 
      <div className = "testDiv" ref={this.myDivToFocus}>
-        <p>This is a test.</p>
+        <p onClick = {this.handleGoBackClick.bind(this)}>This is a test.</p>
      </div>
 
+     </div>
      </div>
      : null}
     </div>

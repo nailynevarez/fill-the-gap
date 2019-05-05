@@ -3,6 +3,13 @@ body {
 
 }
 
+html {
+  background-color: #F1F3F4;
+    /* overflow-x: auto; */
+    overflow-y: scroll;
+    overflow-x: visible;
+}
+
 .TealBackground {
   position: absolute;
 }
@@ -60,25 +67,22 @@ body {
 
 
 .testDiv {
-  margin-top: 30%;
-  margin-left: 300%;
+  margin-top: -30%;
+  margin-left: 200%;
   font-size: 55px;
   background-color: red;
   height: 10%;
   width: 10%;
-}
+  position: absolute;
 
-html {
-  background-color: #F1F3F4;
-    overflow-x: auto;
-    overflow-y: auto;
 }
 
 
-.scrolling-wrapper {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
+
+
+.scrollingDiv {
+  overflow-x: scroll;
+  overflow-y: hidden;
   white-space: nowrap;
 }
 
@@ -117,6 +121,10 @@ main {
   opacity: 1;
   margin-left: 1%;
   margin-right: 3%;
+  position: fixed;
+right: 0;
+left: 0;
+z-index: 999;
 }
 
 /* main:hover nav {
@@ -151,7 +159,7 @@ main .navs nav {
 }
 
 .first-row {
-  margin-top: 10%;
+  margin-top: 20%;
   display: flex;
   justify-content: space-around;
 
