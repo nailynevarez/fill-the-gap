@@ -1,6 +1,7 @@
 body {
   font-family: vinyl, sans-serif;
   color: #181818;
+  cursor: url("../cursor.png");
 }
 
 html {
@@ -152,6 +153,197 @@ html {
 
 
 
+
+/*------------------------*/
+
+
+
+.linguisticDiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 15%;
+  margin-left: 0%;
+  font-size: 55px;
+
+  height: 60%;
+  width: 100%;
+  position: absolute;
+}
+.linguisticDiv input {
+  width: 60%;
+  height: 20%;
+  margin-left: 20%;
+  font-size:25px;
+  font-family: vinyl, sans-serif;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+}
+
+.linguisticDiv input:focus {
+  outline: 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+}
+
+.linguisticDiv input::placeholder {
+  margin: 0px;
+  color: #BEBEBE;
+}
+.linguisticDiv p {
+  height: 10%;
+  width: 100%;
+  text-align: center;
+}
+
+.linguisticDiv form label {
+  font-size: .4em;
+}
+
+.linguisticDiv form {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 18%;
+  margin-right: 18%;
+}
+
+
+
+.LButton {
+  margin-top: 5%;
+  margin-left: 70%;
+  height: 10%;
+  width: 10%;
+  opacity: .5;
+  transition:  opacity .5s ease 0s;
+}
+
+.LButton:hover{
+  opacity: 1;
+  transition:  opacity .5s ease 0s;
+}
+
+.LTitle {
+  margin-top: 10%;
+  margin-bottom: 0;
+  color: #f27b13;
+}
+
+.LAnswer {
+  font-size: .5em;
+  color: #BEBEBE;
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+
+.LDefinition {
+  height: 50%;
+  width: 50%;
+  margin-left: 25%;
+}
+
+
+
+/*------------------------*/
+
+.FamilialDiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 15%;
+  margin-left: 0%;
+  font-size: 55px;
+
+  height: 60%;
+  width: 100%;
+  position: absolute;
+}
+.FamilialDiv input {
+  width: 60%;
+  height: 20%;
+  margin-left: 20%;
+  font-size:25px;
+  font-family: vinyl, sans-serif;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+}
+
+.FamilialDiv input:focus {
+  outline: 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+}
+
+.FamilialDiv input::placeholder {
+  margin: 0px;
+  color: #BEBEBE;
+}
+.FamilialDiv p {
+  height: 10%;
+  width: 100%;
+  text-align: center;
+}
+
+.FamilialDiv form label {
+  font-size: .4em;
+}
+
+.FamilialDiv form {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 18%;
+  margin-right: 18%;
+}
+
+
+
+.FButton {
+  margin-top: 5%;
+  margin-left: 70%;
+  height: 10%;
+  width: 10%;
+  opacity: .5;
+  transition:  opacity .5s ease 0s;
+}
+
+.FButton:hover{
+  opacity: 1;
+  transition:  opacity .5s ease 0s;
+}
+
+
+
+.FTitle {
+  margin-top: 10%;
+
+  margin-bottom: 0;
+  color: #08a696;
+
+}
+
+.FAnswer {
+  font-size: .5em;
+  color: #BEBEBE;
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+
+.FDefinition {
+  height: 50%;
+  width: 50%;
+  margin-left: 25%;
+}
+
+.FValueLabel {
+  font-size: .3em;
+}
+
+/*------------------------*/
+
 .scrollingDiv {
   overflow-x: scroll;
   overflow-y: hidden;
@@ -239,12 +431,12 @@ main .navs nav {
 .second-row {
   display: flex;
   justify-content: space-around;
-  margin-top: .50%;
+  margin-top: .25%;
 }
 
 .Tri1Empty {
   height: 17% + 1vh;
-  width: 15%;
+  width: 13%;
   /* margin-left: 40%;
   margin-top: 11%;*/
   position: absolute;
@@ -254,7 +446,7 @@ main .navs nav {
 
 .Tri1Full {
   height: 17% + 1vh;
-  width: 15%;
+  width: 13%;
   /* margin-left: 40%;
   margin-top: 11%;*/
   position: absolute;
@@ -288,10 +480,24 @@ main .navs nav {
 }
 
 .Tri2Empty {
-  height: 17%;
-  width: 15%;
+  height: 13%;
+  width: 13%;
   margin-right: 44%;
-  margin-left: 1.2%;
+  margin-left: .9%;
+  padding-top: .4%;
+  /* position: relative; */
+  /* margin-left: -7%;
+  margin-top: 10%;
+  position: relative; */
+  opacity: 1;
+  transition:  opacity .5s ease 0s;
+}
+
+.Tri2Full {
+  height: 13%;
+  width: 13%;
+  margin-right: 44%;
+  margin-left: .9%;
   padding-top: .4%;
   /* position: relative; */
   /* margin-left: -7%;
@@ -302,8 +508,8 @@ main .navs nav {
 }
 
 .Tri6Empty {
-  height: 17%;
-  width: 15%;
+  height: 13%;
+  width: 13%;
   margin-left: 43.5%;
   /* position: relative; */
   /* margin-left: -7%;
@@ -314,10 +520,23 @@ main .navs nav {
 }
 
 .Tri3Empty {
-  height: 17%;
-  width: 15%;
+  height: 13%;
+  width: 13%;
   margin-right: 44%;
-  margin-left: 1.2%;
+  margin-left: .9%;
+  /* margin-left: 47.5%;
+  margin-top: -3.5%;
+  position: relative; */
+  opacity: 1;
+  transition:  opacity .5s ease 0s;
+}
+
+.Tri3Full {
+  height: 13%;
+  width: 13%;
+  margin-top: -.4%;
+  margin-right: 44%;
+  margin-left: .9%;
   /* margin-left: 47.5%;
   margin-top: -3.5%;
   position: relative; */
@@ -327,7 +546,7 @@ main .navs nav {
 
 .Tri4Empty {
   height: 17% + 1vh;
-  width: 15%;
+  width: 13%;
   padding-right: .6%;
   /* margin-left: 40.5%;
   margin-top: %;
@@ -338,8 +557,8 @@ main .navs nav {
 }
 
 .Tri5Empty {
-  height: 17%;
-  width: 15%;
+  height: 13%;
+  width: 13%;
   margin-left: 43.5%;
   /* margin-left: 1.5%;
   margin-top: %;
