@@ -345,6 +345,13 @@ class App extends React.Component {
     console.log(this.state.NValue);
   }
 
+  handleRValueChange = (event) => {
+    this.setState({
+      RValue: event.target.value,
+    });
+    console.log(this.state.RValue);
+  }
+
 
   handleFriendsValueChange = (event) => {
     this.setState({
@@ -465,6 +472,19 @@ class App extends React.Component {
       setTimeout(() => {
         this.setState({
           NAnswer: true,
+        });
+      }, 500);
+    }
+
+    handleRValueSubmit = (event) => {
+      this.setState({
+        RQuestion: false,
+        Tri6Done: true,
+      });
+
+      setTimeout(() => {
+        this.setState({
+          RAnswer: true,
         });
       }, 500);
     }
@@ -714,6 +734,36 @@ render() {
            <p className = "NTitle">NAVIGATIONAL</p>
            <p className = "NAnswer">{this.state.NValue}</p>
            <img className = "NDefinition" src = {NDefinition}/>
+           <p className = "returnText" onClick = {this.handleGoBackClick.bind(this)}> <i class="left"></i> RETURN TO MODEL </p>
+           </div>
+           : null}
+        </div>
+        </div>
+        : null}
+
+
+        {this.state.showR ?
+        <div className = {this.state.isRActive ? 'fadeIn' : 'fadeOut'}>
+        <div className = "resistanceDiv">
+          {this.state.RQuestion ? <p className = "resistanceQuestion">Have you ever witnessed, been told about, or experienced racial discrimination/microagressions? </p> :null}
+          {this.state.RQuestion ?
+            <form>
+            <label>Yes
+            <input   type = "radio" value = "Yes" checked = {this.state.RValue === "Yes"} onChange={this.handleRValueChange.bind(this)}/>
+            </label>
+
+            <label>No
+            <input  type = "radio" value = "No" checked = {this.state.RValue === "No"} onChange={this.handleRValueChange.bind(this)}/>
+            </label>
+            </form>
+            :null}
+         {this.state.RQuestion ? <img className = "LButton" src = {FButton} onClick = {this.handleRValueSubmit.bind(this)}/> :null}
+
+         {this.state.RAnswer ?
+           <div className = {this.state.RAnswer ? 'fadeIn' : 'fadeOut'}>
+           <p className = "RTitle">RESISTANCE</p>
+           <p className = "RAnswer">{this.state.RValue}</p>
+           <img className = "RDefinition" src = {RDefinition}/>
            <p className = "returnText" onClick = {this.handleGoBackClick.bind(this)}> <i class="left"></i> RETURN TO MODEL </p>
            </div>
            : null}

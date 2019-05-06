@@ -539,6 +539,104 @@ html {
   font-size: .3em;
 }
 
+/*------------------------*/
+
+
+.resistanceDiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 15%;
+  margin-left: 0%;
+  font-size: 55px;
+
+  height: 60%;
+  width: 100%;
+  position: absolute;
+}
+.resistanceDiv input {
+  width: 60%;
+  height: 20%;
+  margin-left: 20%;
+  font-size:25px;
+  font-family: vinyl, sans-serif;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+}
+
+.resistanceDiv input:focus {
+  outline: 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+}
+
+.resistanceDiv input::placeholder {
+  margin: 0px;
+  color: #BEBEBE;
+}
+.resistanceDiv p {
+  height: 10%;
+  width: 100%;
+  text-align: center;
+}
+
+.resistanceDiv form label {
+  font-size: .4em;
+}
+
+.resistanceDiv form {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 18%;
+  margin-right: 18%;
+}
+
+
+
+.RButton {
+  margin-top: 5%;
+  margin-left: 70%;
+  height: 10%;
+  width: 10%;
+  opacity: .5;
+  transition:  opacity .5s ease 0s;
+}
+
+.RButton:hover{
+  opacity: 1;
+  transition:  opacity .5s ease 0s;
+}
+
+.resistanceQuestion {
+  margin-bottom: 10%;
+}
+
+.RTitle {
+  margin-top: 10%;
+  margin-bottom: 0;
+  color: #08a696;
+
+}
+
+.RAnswer {
+  font-size: .5em;
+  color: #BEBEBE;
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+
+.RDefinition {
+  height: 50%;
+  width: 50%;
+  margin-left: 25%;
+}
+
+.RValueLabel {
+  font-size: .3em;
+}
+
 
 
 
