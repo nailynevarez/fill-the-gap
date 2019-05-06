@@ -344,6 +344,205 @@ html {
 
 /*------------------------*/
 
+.socialDiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 15%;
+  margin-left: 0%;
+  font-size: 55px;
+
+  height: 60%;
+  width: 100%;
+  position: absolute;
+}
+.socialDiv input {
+  width: 60%;
+  height: 20%;
+  margin-left: 20%;
+  font-size:25px;
+  font-family: vinyl, sans-serif;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+}
+
+.socialDiv input:focus {
+  outline: 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+}
+
+.socialDiv input::placeholder {
+  margin: 0px;
+  color: #BEBEBE;
+}
+.socialDiv p {
+  height: 10%;
+  width: 100%;
+  text-align: center;
+}
+
+.socialDiv form label {
+  font-size: .4em;
+}
+
+.socialDiv form {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 18%;
+  margin-right: 18%;
+}
+
+
+
+.SButton {
+  margin-top: 5%;
+  margin-left: 70%;
+  height: 10%;
+  width: 10%;
+  opacity: .5;
+  transition:  opacity .5s ease 0s;
+}
+
+.SButton:hover{
+  opacity: 1;
+  transition:  opacity .5s ease 0s;
+}
+
+
+
+.STitle {
+  margin-top: 10%;
+
+  margin-bottom: 0;
+  color: #f24822;
+
+}
+
+.SAnswer {
+  font-size: .5em;
+  color: #BEBEBE;
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+
+.SDefinition {
+  height: 50%;
+  width: 50%;
+  margin-left: 25%;
+}
+
+.SValueLabel {
+  font-size: .3em;
+}
+
+.parenthesis {
+  font-size: .5em;
+  margin-top:-2%;
+}
+
+/*------------------------*/
+
+.naviDiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 15%;
+  margin-left: 0%;
+  font-size: 55px;
+
+  height: 60%;
+  width: 100%;
+  position: absolute;
+}
+.naviDiv input {
+  width: 60%;
+  height: 20%;
+  margin-left: 20%;
+  font-size:25px;
+  font-family: vinyl, sans-serif;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+}
+
+.naviDiv input:focus {
+  outline: 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+}
+
+.naviDiv input::placeholder {
+  margin: 0px;
+  color: #BEBEBE;
+}
+.naviDiv p {
+  height: 10%;
+  width: 100%;
+  text-align: center;
+}
+
+.naviDiv form label {
+  font-size: .4em;
+}
+
+.naviDiv form {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 18%;
+  margin-right: 18%;
+}
+
+
+
+.NButton {
+  margin-top: 5%;
+  margin-left: 70%;
+  height: 10%;
+  width: 10%;
+  opacity: .5;
+  transition:  opacity .5s ease 0s;
+}
+
+.NButton:hover{
+  opacity: 1;
+  transition:  opacity .5s ease 0s;
+}
+
+
+
+.NTitle {
+  margin-top: 10%;
+
+  margin-bottom: 0;
+  color: #f27b13;
+
+}
+
+.NAnswer {
+  font-size: .5em;
+  color: #BEBEBE;
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+
+.NDefinition {
+  height: 50%;
+  width: 50%;
+  margin-left: 25%;
+}
+
+.NValueLabel {
+  font-size: .3em;
+}
+
+
+
+
+/*------------------------*/
 .scrollingDiv {
   overflow-x: scroll;
   overflow-y: hidden;
@@ -519,6 +718,18 @@ main .navs nav {
   transition:  opacity .5s ease 0s;
 }
 
+.Tri6Full {
+  height: 13%;
+  width: 13%;
+  margin-left: 43.5%;
+  /* position: relative; */
+  /* margin-left: -7%;
+  margin-top: 10%;
+  position: relative; */
+  opacity: 1;
+  transition:  opacity .5s ease 0s;
+}
+
 .Tri3Empty {
   height: 13%;
   width: 13%;
@@ -556,6 +767,19 @@ main .navs nav {
   transition:  opacity .5s ease 0s;
 }
 
+
+.Tri4Full {
+  height: 17% + 1vh;
+  width: 13%;
+  padding-right: .6%;
+  /* margin-left: 40.5%;
+  margin-top: %;
+  position: relative; */
+  position: absolute;
+  opacity: 1;
+  transition:  opacity .5s ease 0s;
+}
+
 .Tri5Empty {
   height: 13%;
   width: 13%;
@@ -567,6 +791,18 @@ main .navs nav {
   transition:  opacity .5s ease 0s;
 }
 
+
+.Tri5Full {
+  height: 13%;
+  width: 13%;
+  margin-top: -.4%;
+  margin-left: 43.5%;
+  /* margin-left: 1.5%;
+  margin-top: %;
+  position: relative; */
+  opacity: 1;
+  transition:  opacity .5s ease 0s;
+}
 
 
 .fadeIn {

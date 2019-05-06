@@ -28,9 +28,9 @@ import LButton from './LButton.png';
 import LDefinition from './LDefinition.png';
 import FButton from './FButton.png';
 import FDefinition from './FDefinition.png';
-import SDefinition from './FDefinition.png';
-import NDefinition from './FDefinition.png';
-import RDefinition from './FDefinition.png';
+import SDefinition from './SDefinition.png';
+import NDefinition from './NDefinition.png';
+import RDefinition from './RDefinition.png';
 
 
 class App extends React.Component {
@@ -86,6 +86,13 @@ class App extends React.Component {
       isNActive: false,
       showR: false,
       isRActive: false,
+
+      isFriendsChecked: false,
+      isClassmatesChecked: false,
+      isFamilyChecked: false,
+      isInstructorsChecked: false,
+      isCoworkersChecked: false,
+      finalSValue: "",
     };
 
   }
@@ -331,6 +338,43 @@ class App extends React.Component {
     console.log(this.state.FValue);
   }
 
+  handleNValueChange = (event) => {
+    this.setState({
+      NValue: event.target.value,
+    });
+    console.log(this.state.NValue);
+  }
+
+
+  handleFriendsValueChange = (event) => {
+    this.setState({
+      isFriendsChecked: !this.state.isFriendsChecked,
+    });
+  }
+
+  handleClassmatesValueChange = (event) => {
+    this.setState({
+      isClassmatesChecked: !this.state.isClassmatesChecked,
+    });
+  }
+
+  handleFamilyValueChange = (event) => {
+    this.setState({
+      isFamilyChecked: !this.state.isFamilyChecked,
+    });
+  }
+
+  handleInstructorsValueChange = (event) => {
+    this.setState({
+      isInstructorsChecked: !this.state.isInstructorsChecked,
+    });
+  }
+
+  handleCoworkersValueChange = (event) => {
+    this.setState({
+      isCoworkersChecked: !this.state.isCoworkersChecked,
+    });
+  }
 
   handleAValueSubmit = (event) => {
     this.setState({
@@ -371,6 +415,60 @@ class App extends React.Component {
       });
     }, 500);
   }
+
+
+
+    handleSValueSubmit = (event) => {
+    if(this.state.isFriendsChecked === true) {
+      this.setState(prevState => ({ finalSValue: prevState.finalSValue.concat('\n Friends') }));
+      }
+
+    if(this.state.isClassmatesChecked === true) {
+      this.setState(prevState => ({ finalSValue: prevState.finalSValue.concat('\n Classmates') }));
+      }
+
+    if(this.state.isFamilyChecked === true) {
+      this.setState(prevState => ({ finalSValue: prevState.finalSValue.concat('\n Family') }));
+      }
+
+
+      if(this.state.isInstructorsChecked === true) {
+        this.setState(prevState => ({ finalSValue: prevState.finalSValue.concat('\n Instructors') }));
+      }
+
+      if(this.state.isCoworkersChecked === true) {
+        this.setState(prevState => ({ finalSValue: prevState.finalSValue.concat('\n Coworkers') }));
+      }
+
+
+
+      this.setState({
+        SQuestion: false,
+        Tri4Done: true,
+      });
+
+      setTimeout(() => {
+        this.setState({
+          SAnswer: true,
+        });
+      }, 500);
+    }
+
+
+
+    handleNValueSubmit = (event) => {
+      this.setState({
+        NQuestion: false,
+        Tri5Done: true,
+      });
+
+      setTimeout(() => {
+        this.setState({
+          NAnswer: true,
+        });
+      }, 500);
+    }
+
 
 
 
@@ -546,6 +644,79 @@ render() {
             </div>
             : null}
 
+        </div>
+        </div>
+        : null}
+
+
+
+        {this.state.showS ?
+        <div className = {this.state.isSActive ? 'fadeIn' : 'fadeOut'}>
+        <div className = "socialDiv">
+          {this.state.SQuestion ?<p>Who would you consider to be in your network?</p> :null}
+          {this.state.SQuestion ?<p className = "parenthesis">(Those who you engage with most and who care about your growth)</p> :null}
+          {this.state.SQuestion ?
+            <form>
+            <label>
+            <input type = "checkbox" value = "Friends" checked = {this.state.isFriendsChecked} onChange={this.handleFriendsValueChange.bind(this)}/>
+            Friends</label>
+
+            <label>
+            <input type = "checkbox" value = "Classmates" checked = {this.state.isClassmatesChecked} onChange={this.handleClassmatesValueChange.bind(this)}/>
+            Classmates</label>
+
+
+            <label>
+            <input type = "checkbox" value = "Family" checked = {this.state.isFamilyChecked} onChange={this.handleFamilyValueChange.bind(this)}/>
+            Family</label>
+
+
+            <label>
+            <input type = "checkbox" value = "Instructors" checked = {this.state.isInstructorsChecked} onChange={this.handleInstructorsValueChange.bind(this)}/>
+            Instructors</label>
+
+
+            <label>
+            <input type = "checkbox" value = "Coworkers" checked = {this.state.isCoworkersChecked} onChange={this.handleCoworkersValueChange.bind(this)}/>
+            Coworkers</label>
+
+
+            </form>
+            :null}
+         {this.state.SQuestion ? <img className = "SButton" src = {AButton} onClick = {this.handleSValueSubmit.bind(this)}/> :null}
+         {this.state.SAnswer ?
+            <div className = {this.state.SAnswer ? 'fadeIn' : 'fadeOut'}>
+            <p className = "STitle">SOCIAL</p>
+            <p className = "SAnswer">{this.state.finalSValue}</p>
+            <img className = "SDefinition" src = {SDefinition}/>
+            <p className = "returnText" onClick = {this.handleGoBackClick.bind(this)}> <i class="left"></i> RETURN TO MODEL </p>
+            </div>
+            : null}
+
+        </div>
+        </div>
+        : null}
+
+
+
+        {this.state.showN ?
+        <div className = {this.state.isNActive ? 'fadeIn' : 'fadeOut'}>
+        <div className = "linguisticDiv">
+          {this.state.NQuestion ?<p>How many "worlds" do you switch between in your life?</p> :null}
+          {this.state.NQuestion ?<p className = "parenthesis">(School, Work, Family, Spirituality, Friends etc.)</p> :null}
+          {this.state.NQuestion ?
+            <input placeholder = "Type here." type = "text" value = {this.state.NValue} onChange = {this.handleNValueChange.bind(this)}/>
+            :null}
+         {this.state.NQuestion ? <img className = "LButton" src = {LButton} onClick = {this.handleNValueSubmit.bind(this)}/> :null}
+
+         {this.state.NAnswer ?
+           <div className = {this.state.NAnswer ? 'fadeIn' : 'fadeOut'}>
+           <p className = "NTitle">NAVIGATIONAL</p>
+           <p className = "NAnswer">{this.state.NValue}</p>
+           <img className = "NDefinition" src = {NDefinition}/>
+           <p className = "returnText" onClick = {this.handleGoBackClick.bind(this)}> <i class="left"></i> RETURN TO MODEL </p>
+           </div>
+           : null}
         </div>
         </div>
         : null}
