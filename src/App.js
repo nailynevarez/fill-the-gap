@@ -47,9 +47,9 @@ class App extends React.Component {
 
       activePage: 'fourth',
       isTealActive: true,
-      isAppActive: true,
+      isAppActive: false,
       isIntroButton: false,
-      isIntroSlideActive: false,
+      isIntroSlideActive: true,
       AValue: '',
       LValue: '',
       FNumValue: 50,
@@ -94,6 +94,8 @@ class App extends React.Component {
       isInstructorsChecked: false,
       isCoworkersChecked: false,
       finalSValue: "",
+
+      isAboutActive: false,
     };
 
   }
@@ -259,7 +261,30 @@ class App extends React.Component {
   }
 
   handleAboutClick = (event) => {
+    this.setState({
+      isAboutActive:true,
+      showHex:false,
+      showA: false,
+      showF: false,
+      showL: false,
+      showS: false,
+      showN: false,
+      showR: false,
+    });
+  }
 
+
+  handleHomeClick = (event) => {
+    this.setState({
+      isAboutActive:false,
+      showHex:true,
+      showA: false,
+      showF: false,
+      showL: false,
+      showS: false,
+      showN: false,
+      showR: false,
+    });
   }
 
   handleGoBackClick = (event) => {
@@ -557,11 +582,15 @@ render() {
       </div>
 
       <div className = "navs">
-        <nav><a>Home</a></nav>
+        <nav><a onClick = {this.handleHomeClick.bind(this)}>Home</a></nav>
         <nav><a onClick = {this.handleAboutClick.bind(this)}>About</a></nav>
         <nav><a>Get Involved</a></nav>
       </div>
       </main>
+
+      {this.state.isAboutActive ?
+        <img/>
+      : null}
 
       {this.state.showHex ?
     <div className = "scrollingDiv">
