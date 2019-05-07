@@ -50,6 +50,7 @@ class App extends React.Component {
       isAppActive: false,
       isIntroButton: false,
       isIntroSlideActive: true,
+      introTextFade: false,
       AValue: '',
       LValue: '',
       FNumValue: 50,
@@ -102,15 +103,28 @@ class App extends React.Component {
 
 
   componentWillMount() {
+
+    this.changeBackground('#009a8b');
+
     setTimeout(() => {
       this.setState({
         isIntroButton: true,
       });
     }, 3000);
+
+    setTimeout(() => {
+      this.setState({
+        introTextFade: true,
+      });
+    }, 1000);
    }
 
 
 
+
+changeBackground = (color) => {
+ document.body.style.background = color;
+}
 
   handleAClick = (event) => {
     this.setState({
@@ -245,19 +259,19 @@ class App extends React.Component {
       isIntroButton: false,
       isTealActive: false,
       isAppActive: true,
+      introTextFade: false,
+      isIntroSlideActive: false,
     });
 
-    setTimeout(() => {
-      this.setState({
-        isIntroSlideActive: false,
-      });
-    }, 500);
+    // setTimeout(() => {
+    //   this.setState({
+    //
+    //   });
+    // }, 500);
 
-    setTimeout(() => {
-      this.setState({
-        isAppActive: true,
-      });
-    }, 1000);
+
+
+    this.changeBackground('#F1F3F4');
   }
 
   handleAboutClick = (event) => {
@@ -542,16 +556,8 @@ render() {
       }
   return (
     <div>
-
-    {this.state.isIntroSlideActive ?
-    <div className = {this.state.isTealActive ? 'fadeIn' : 'fadeOut'}>
-    <img className = "TealBackground" src = {TealBackground}/>
-    </div>
-    : null }
-
-
-    {this.state.isIntroSlideActive ?
-    <div className = {this.state.isTealActive ? 'fadeIn' : 'fadeOut'}>
+    {this.state.introTextFade ?
+    <div className = {this.state.introTextFade ? 'fadeIn' : 'fadeOut'}>
       <div className = "IntroTitleDiv">
       <img className = "IntroTitle" src = {IntroTitle}/>
       </div>
@@ -564,7 +570,7 @@ render() {
     </div>
     : null}
 
-    {this.state.isIntroSlideActive ?
+    {this.state.isIntroButton ?
     <div className = {this.state.isIntroButton ? 'fadeIn' : 'fadeOut'} >
     <div className = "IntroButtonDiv">
       <img className = "IntroButton" src = {IntroButton} onClick = {this.handleIntroButtonClick.bind(this)}/>
@@ -812,7 +818,7 @@ render() {
 
      </div>
      : null}
-     <footer><div className = "myaudio"><audio src={sound}  controlsList='nodownload' controls autoPlay loop/>
+     <footer ><div className = {this.state.isTealActive ? 'tealColor' : 'whiteColor'}><audio src={sound}  controlsList='nodownload'  autoPlay loop/>
      </div></footer>
     </div>
 
