@@ -31,6 +31,7 @@ import FDefinition from './FDefinition.png';
 import SDefinition from './SDefinition.png';
 import NDefinition from './NDefinition.png';
 import RDefinition from './RDefinition.png';
+import sound from './sound.mp4';
 
 
 class App extends React.Component {
@@ -517,7 +518,6 @@ render() {
   return (
     <div>
 
-
     {this.state.isIntroSlideActive ?
     <div className = {this.state.isTealActive ? 'fadeIn' : 'fadeOut'}>
     <img className = "TealBackground" src = {TealBackground}/>
@@ -783,6 +783,8 @@ render() {
 
      </div>
      : null}
+     <footer><div className = "myaudio"><audio src={sound}  controlsList='nodownload' controls autoPlay loop/>
+     </div></footer>
     </div>
 
   );
