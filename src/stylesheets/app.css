@@ -8,6 +8,35 @@ body {
   cursor: url("../cursor.png");
 }
 
+.aboutDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.about1 {
+  margin-top: 20%;
+  height: 50%;
+  width: 50%;
+}
+
+.about3 {
+  margin-top: 10%;
+  height: 50%;
+  width: 50%;
+}
+
+.about2 {
+  margin-top: 8%;
+  margin-bottom: 10%;
+  height: 50%;
+  width: 50%;
+}
+
+
+
 .tealColor {
   background-color: #009a8b;
 }
@@ -77,8 +106,8 @@ html {
 .IntroStatement {
   margin-top: 5%;
   position: relative;
-  height: 45%;
-  width: 45%;
+  height: 65%;
+  width: 65%;
 }
 
 .IntroButtonDiv {
@@ -89,8 +118,7 @@ html {
 }
 
 .IntroButton {
-  margin-top: 10%;
-
+  margin-top: 5%;
   margin-right: 10%;
   position: relative;
   height: 20%;
@@ -116,11 +144,13 @@ html {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-top: 15%;
+  margin-top: 10%;
   margin-left: 0%;
+  bottom: 5%;
+  /* color: #f24822; */
   font-size: 55px;
 
-  height: 60%;
+  height: 100%;
   width: 100%;
   position: absolute;
 }
@@ -155,7 +185,7 @@ html {
 .AButton {
   margin-top: 5%;
   margin-left: 70%;
-  height: 10%;
+  height: 7%;
   width: 10%;
   opacity: .5;
   transition:  opacity .5s ease 0s;
@@ -180,9 +210,9 @@ html {
 }
 
 .ADefinition {
-  height: 50%;
-  width: 50%;
-  margin-left: 25%;
+  height: 45%;
+  width: 45%;
+  margin-left: 27.5%;
 }
 
 .returnText {
@@ -217,13 +247,13 @@ html {
 }
 .linguisticDiv input {
   width: 60%;
-  height: 20%;
-  margin-left: 20%;
-  font-size:25px;
-  font-family: vinyl, sans-serif;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid #000000;
+height: 20%;
+margin-left: 20%;
+font-size:25px;
+font-family: vinyl, sans-serif;
+background: transparent;
+border: none;
+border-bottom: 1px solid #000000;
 }
 
 .linguisticDiv input:focus {
@@ -231,6 +261,8 @@ html {
   background: transparent;
   border: none;
   border-bottom: 1px solid #000000;
+
+
 }
 
 .linguisticDiv input::placeholder {
@@ -244,7 +276,8 @@ html {
 }
 
 .linguisticDiv form label {
-  font-size: .4em;
+  font-size: .5em;
+
 }
 
 .linguisticDiv form {
@@ -284,9 +317,9 @@ html {
 }
 
 .LDefinition {
-  height: 50%;
-  width: 50%;
-  margin-left: 25%;
+  height: 45%;
+  width: 45%;
+  margin-left: 27.5%;
 }
 
 
@@ -334,7 +367,7 @@ html {
 }
 
 .FamilialDiv form label {
-  font-size: .4em;
+  font-size: .6em;
 }
 
 .FamilialDiv form {
@@ -378,13 +411,13 @@ html {
 }
 
 .FDefinition {
-  height: 50%;
-  width: 50%;
-  margin-left: 25%;
+  height: 45%;
+  width: 45%;
+  margin-left: 27.5%;
 }
 
 .FValueLabel {
-  font-size: .3em;
+  font-size: .5em;
 }
 
 /*------------------------*/
@@ -401,10 +434,9 @@ html {
   width: 100%;
   position: absolute;
 }
-.socialDiv input {
+.socialDiv form input {
   width: 60%;
-  height: 20%;
-  margin-left: 20%;
+  height: 60%;
   font-size:25px;
   font-family: vinyl, sans-serif;
   background: transparent;
@@ -430,7 +462,7 @@ html {
 }
 
 .socialDiv form label {
-  font-size: .4em;
+  font-size: .5em;
 }
 
 .socialDiv form {
@@ -474,9 +506,9 @@ html {
 }
 
 .SDefinition {
-  height: 50%;
-  width: 50%;
-  margin-left: 25%;
+  height: 45%;
+  width: 45%;
+  margin-left: 27.5%;
 }
 
 .SValueLabel {
@@ -531,7 +563,7 @@ html {
 }
 
 .naviDiv form label {
-  font-size: .4em;
+  font-size: .5em;
 }
 
 .naviDiv form {
@@ -547,7 +579,7 @@ html {
   margin-top: 5%;
   margin-left: 70%;
   height: 10%;
-  width: 10%;
+  width: 9%;
   opacity: .5;
   transition:  opacity .5s ease 0s;
 }
@@ -575,9 +607,9 @@ html {
 }
 
 .NDefinition {
-  height: 50%;
-  width: 50%;
-  margin-left: 25%;
+  height: 45%;
+  width: 45%;
+  margin-left: 27.5%;
 }
 
 .NValueLabel {
@@ -592,7 +624,6 @@ html {
   justify-content: center;
   flex-direction: column;
   margin-top: 15%;
-  margin-left: 0%;
   font-size: 55px;
 
   height: 60%;
@@ -624,11 +655,13 @@ html {
 .resistanceDiv p {
   height: 10%;
   width: 100%;
+  /* margin-left: 5%;
+  margin-right: 5%; */
   text-align: center;
 }
 
 .resistanceDiv form label {
-  font-size: .4em;
+  font-size: .5em;
 }
 
 .resistanceDiv form {
@@ -656,6 +689,8 @@ html {
 
 .resistanceQuestion {
   margin-bottom: 10%;
+  right: 10%;
+  left: 10%;
 }
 
 .RTitle {
@@ -673,9 +708,9 @@ html {
 }
 
 .RDefinition {
-  height: 50%;
-  width: 50%;
-  margin-left: 25%;
+  height: 45%;
+  width: 45%;
+  margin-left: 27.5%;
 }
 
 .RValueLabel {
@@ -764,16 +799,34 @@ main .navs nav {
   margin-left: 50px;
 }
 
+.kid {
+  position: absolute;
+  height: 36%;
+  width: 6%;
+  margin-top: 22%;
+  margin-left: 19%;
+}
+
+.man {
+  position: absolute;
+  height: 53%;
+  width: 15%;
+  margin-top: 14.3%;
+  margin-left: 70%;
+}
+
 .first-row {
   margin-top: 20%;
   display: flex;
   justify-content: space-around;
+  position: relative;
 }
 
 .second-row {
   display: flex;
   justify-content: space-around;
   margin-top: .25%;
+  position: relative;
 }
 
 .Tri1Empty {

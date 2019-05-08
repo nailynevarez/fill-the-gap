@@ -32,6 +32,11 @@ import SDefinition from './SDefinition.png';
 import NDefinition from './NDefinition.png';
 import RDefinition from './RDefinition.png';
 import sound from './sound.mp4';
+import kid from './kid.png';
+import man from './man.png';
+import about1 from './about1.png';
+import about2 from './about2.png';
+import about3 from './about3.png';
 
 
 class App extends React.Component {
@@ -73,7 +78,8 @@ class App extends React.Component {
       RAnswer: false,
 
       isHexActive: true,
-      showHex: true,
+      showHex: false,
+      showPeeps: true,
 
       isAActive: false,
       showA: false,
@@ -134,6 +140,7 @@ changeBackground = (color) => {
     setTimeout(() => {
       this.setState({
         showHex: false,
+        showPeeps: false,
       });
     }, 500);
 
@@ -155,6 +162,7 @@ changeBackground = (color) => {
       setTimeout(() => {
         this.setState({
           showHex: false,
+          showPeeps: false,
         });
       }, 500);
 
@@ -176,6 +184,7 @@ changeBackground = (color) => {
         setTimeout(() => {
           this.setState({
             showHex: false,
+            showPeeps: false,
           });
         }, 500);
 
@@ -197,6 +206,7 @@ changeBackground = (color) => {
           setTimeout(() => {
             this.setState({
               showHex: false,
+              showPeeps: false,
             });
           }, 500);
 
@@ -218,6 +228,7 @@ changeBackground = (color) => {
             setTimeout(() => {
               this.setState({
                 showHex: false,
+                showPeeps: false,
               });
             }, 500);
 
@@ -238,6 +249,7 @@ changeBackground = (color) => {
               setTimeout(() => {
                 this.setState({
                   showHex: false,
+                  showPeeps: false,
                 });
               }, 500);
 
@@ -263,11 +275,11 @@ changeBackground = (color) => {
       isIntroSlideActive: false,
     });
 
-    // setTimeout(() => {
-    //   this.setState({
-    //
-    //   });
-    // }, 500);
+    setTimeout(() => {
+      this.setState({
+        showHex: true,
+      });
+    }, 2000);
 
 
 
@@ -277,7 +289,9 @@ changeBackground = (color) => {
   handleAboutClick = (event) => {
     this.setState({
       isAboutActive:true,
+      isHexActive: false,
       showHex:false,
+      showPeeps: false,
       showA: false,
       showF: false,
       showL: false,
@@ -291,7 +305,9 @@ changeBackground = (color) => {
   handleHomeClick = (event) => {
     this.setState({
       isAboutActive:false,
+      isHexActive: true,
       showHex:true,
+      showPeeps: true,
       showA: false,
       showF: false,
       showL: false,
@@ -326,6 +342,7 @@ changeBackground = (color) => {
       this.setState({
           showHex: true,
           isHexActive: true,
+          showPeeps: true,
       });
     }, 1000);
   }
@@ -352,26 +369,26 @@ changeBackground = (color) => {
 
     if(this.state.FNumValue > 0 && this.state.FNumValue < 25) {
       this.setState({
-        FValue: "Somewhat important",
+        FValue: "Not important",
       });
     }
 
     if(this.state.FNumValue >= 25 && this.state.FNumValue < 50) {
       this.setState({
-        FValue: "Important",
+        FValue: "Somewhat Important",
       });
     }
 
 
     else if(this.state.FNumValue >= 50 && this.state.FNumValue < 75) {
       this.setState({
-        FValue: "Very important",
+        FValue: "Important",
       });
     }
 
     else if(this.state.FNumValue >= 75 && this.state.FNumValue <= 100) {
       this.setState({
-        FValue: "The most important",
+        FValue: "Extremely important",
       });
     }
     console.log(this.state.FNumValue);
@@ -594,9 +611,21 @@ render() {
       </div>
       </main>
 
+      {this.state.showPeeps ? <img className = "kid" src = {kid}/> : null}
+      {this.state.showPeeps ? <img className = "man" src = {man}/> : null}
+
       {this.state.isAboutActive ?
-        <img/>
+        <div className = {this.state.isAboutActive ? 'fadeIn' : 'fadeOut'}>
+        <div className = 'aboutDiv'>
+        <img className = 'about1' src = {about1}/>
+        <img className = 'about3' src = {about3}/>
+        <img className = 'about2' src = {about2}/>
+        </div>
+        </div>
       : null}
+
+
+
 
       {this.state.showHex ?
     <div className = "scrollingDiv">
@@ -648,16 +677,19 @@ render() {
           {this.state.LQuestion ?<p>How often do you and your family tell stories?</p> :null}
           {this.state.LQuestion ?
             <form>
-            <label>Sometimes
+            <label>
             <input  name = "language" type = "radio" value = "Sometimes" checked = {this.state.LValue === "Sometimes"} onChange={this.handleLValueChange.bind(this)}/>
+            Sometimes
             </label>
 
-            <label>Often
+            <label>
             <input  name = "language" type = "radio" value = "Often" checked = {this.state.LValue === "Often"} onChange={this.handleLValueChange.bind(this)}/>
+            Often
             </label>
 
-            <label>All the time
+            <label>
             <input  name = "language" type = "radio" value = "All the time" checked = {this.state.LValue === "All the time"} onChange={this.handleLValueChange.bind(this)}/>
+            All the time
             </label>
             </form>
             :null}
@@ -780,7 +812,7 @@ render() {
         {this.state.showR ?
         <div className = {this.state.isRActive ? 'fadeIn' : 'fadeOut'}>
         <div className = "resistanceDiv">
-          {this.state.RQuestion ? <p className = "resistanceQuestion">Have you ever witnessed, been told about, or experienced racial discrimination/microagressions? </p> :null}
+          {this.state.RQuestion ? <p className = "resistanceQuestion">Have you ever witnessed, been told about, or experienced racial discrimination/microaggressions? </p> :null}
           {this.state.RQuestion ?
             <form>
             <label>Yes
