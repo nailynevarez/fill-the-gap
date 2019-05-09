@@ -45,11 +45,11 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      Tri1Done: true,
-      Tri2Done: true,
-      Tri3Done: true,
-      Tri4Done: true,
-      Tri5Done: true,
+      Tri1Done: false,
+      Tri2Done: false,
+      Tri3Done: false,
+      Tri4Done: false,
+      Tri5Done: false,
       Tri6Done: false,
 
       activePage: 'fourth',
@@ -575,7 +575,7 @@ changeBackground = (color) => {
       setTimeout(() => {
         this.setState({
           RAnswer: true,
-          
+
         });
       }, 500);
     }
