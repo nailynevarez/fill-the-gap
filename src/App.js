@@ -608,6 +608,7 @@ render() {
       }
   return (
     <div>
+    <audio src={sound}  controlsList='nodownload'  autoPlay loop/>
     {this.state.introTextFade ?
     <div className = {this.state.introTextFade ? 'fadeIn' : 'fadeOut'}>
       <div className = "IntroTitleDiv">
@@ -892,7 +893,7 @@ render() {
 
      </div>
      : null}
-     <footer ><div className = {this.state.isTealActive ? 'tealColor' : 'whiteColor'}><audio src={sound}  controlsList='nodownload'  autoPlay loop/>
+     <footer ><div className = {this.state.isTealActive ? 'tealColor' : 'whiteColor'}>
      </div></footer>
     </div>
 
