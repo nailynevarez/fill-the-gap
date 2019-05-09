@@ -561,9 +561,10 @@ changeBackground = (color) => {
       setTimeout(() => {
         this.setState({
           NAnswer: true,
-
         });
       }, 500);
+
+      this.setState(prevState => ({ NValue: prevState.NValue.concat('\n Worlds') }));
     }
 
     handleRValueSubmit = (event) => {
@@ -870,7 +871,6 @@ render() {
          {this.state.RAnswer ?
            <div className = {this.state.RAnswer ? 'fadeIn' : 'fadeOut'}>
            <p className = "RTitle">RESISTANCE</p>
-           <p className = "RAnswer">{this.state.RValue}</p>
            <img className = "RDefinition" src = {RDefinition}/>
            <p className = "returnText" onClick = {this.handleGoBackClick.bind(this)}> <i class="left"></i> RETURN TO MODEL </p>
            </div>
