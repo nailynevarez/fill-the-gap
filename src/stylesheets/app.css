@@ -936,6 +936,7 @@ main .navs nav {
   width: 13%;
   margin-right: 44%;
   margin-left: .9%;
+  margin-bottom: -1%;
   padding-top: .4%;
   /* position: relative; */
   /* margin-left: -7%;
@@ -984,7 +985,7 @@ main .navs nav {
 .Tri3Full {
   height: 13%;
   width: 13%;
-  margin-top: -.7%;
+  margin-top: -.2%;
   margin-right: 43.7%;
   margin-left: .7%;
   /* margin-left: 47.5%;
@@ -997,7 +998,8 @@ main .navs nav {
 .Tri4Empty {
   height: 17% + 1vh;
   width: 13%;
-  padding-right: .6%;
+  padding-right: .5%;
+  
   /* margin-left: 40.5%;
   margin-top: %;
   position: relative; */
@@ -1011,7 +1013,7 @@ main .navs nav {
   height: 17% + 1vh;
   width: 13%;
   padding-right: .6%;
-  margin-top: -.4%;
+  margin-top: 0%;
   /* margin-left: 40.5%;
   margin-top: %;
   position: relative; */
@@ -1035,7 +1037,7 @@ main .navs nav {
 .Tri5Full {
   height: 13%;
   width: 13%;
-  margin-top: -.8%;
+  margin-top: -.5%;
   margin-left: 43.5%;
   /* margin-left: 1.5%;
   margin-top: %;

@@ -871,6 +871,7 @@ render() {
          {this.state.RAnswer ?
            <div className = {this.state.RAnswer ? 'fadeIn' : 'fadeOut'}>
            <p className = "RTitle">RESISTANCE</p>
+           <p className = "RAnswer"></p>
            <img className = "RDefinition" src = {RDefinition}/>
            <p className = "returnText" onClick = {this.handleGoBackClick.bind(this)}> <i class="left"></i> RETURN TO MODEL </p>
            </div>
