@@ -16,7 +16,7 @@ body {
   position: relative; */
   margin-top: 25%;
 
-  height: 30%;
+  /* height: 30%; */
   width: 30%;
   margin-bottom: 2%;
 }
@@ -34,7 +34,7 @@ body {
 .endButton {
   /* padding-right: 40%;
   padding-left: 10%; */
-  height: 10%;
+  /* height: 10%; */
   width: 10%;
 
   /* margin-top: 40%;
@@ -44,7 +44,7 @@ body {
 }
 
 .endButton:hover {
-  height: 12%;
+  /* height: 12%; */
   width: 12%;
   transition:  height .5s ease 0s;
   transition:  width .5s ease 0s;
