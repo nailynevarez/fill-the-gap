@@ -7,6 +7,49 @@ body {
   color: #181818;
   cursor: url("../cursor.png");
 }
+.end {
+  /* height: 30%;
+  margin-top: 27%;
+  margin-bottom: 5%;
+  width: 30%;
+  margin-left: 33%;
+  position: relative; */
+  margin-top: 25%;
+
+  height: 30%;
+  width: 30%;
+  margin-bottom: 2%;
+}
+
+.endWrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+.endButton {
+  /* padding-right: 40%;
+  padding-left: 10%; */
+  height: 10%;
+  width: 10%;
+
+  /* margin-top: 40%;
+  position: absolute; */
+  transition:  height .5s ease 0s;
+  transition:  width .5s ease 0s;
+}
+
+.endButton:hover {
+  height: 12%;
+  width: 12%;
+  transition:  height .5s ease 0s;
+  transition:  width .5s ease 0s;
+}
+
 
 .aboutDiv {
   width: 100%;
@@ -804,7 +847,7 @@ main .navs nav {
   height: 36%;
   width: 6%;
   margin-top: 22%;
-  margin-left: 19%;
+  margin-left: 21%;
 }
 
 .man {

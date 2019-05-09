@@ -37,17 +37,19 @@ import man from './man.png';
 import about1 from './about1.png';
 import about2 from './about2.png';
 import about3 from './about3.png';
+import end from './end.png';
+import endButton from './endButton.png';
 
 
 class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      Tri1Done: false,
-      Tri2Done: false,
-      Tri3Done: false,
-      Tri4Done: false,
-      Tri5Done: false,
+      Tri1Done: true,
+      Tri2Done: true,
+      Tri3Done: true,
+      Tri4Done: true,
+      Tri5Done: true,
       Tri6Done: false,
 
       activePage: 'fourth',
@@ -103,6 +105,9 @@ class App extends React.Component {
       finalSValue: "",
 
       isAboutActive: false,
+      isDone: false,
+      showEnd: false,
+      showEndButton: false,
     };
 
   }
@@ -123,6 +128,28 @@ class App extends React.Component {
         introTextFade: true,
       });
     }, 1000);
+   }
+
+   checkDone = () => {
+     if (this.state.Tri1Done === true &&
+          this.state.Tri2Done === true &&
+          this.state.Tri3Done === true &&
+          this.state.Tri4Done === true &&
+          this.state.Tri5Done === true &&
+          this.state.Tri6Done === true ) {
+       setTimeout(() => {
+         this.setState({
+           isHexActive: false,
+         });
+       }, 2500);
+       setTimeout(() => {
+         this.setState({
+           showHex: false,
+           showEnd: true,
+           showEndButton: true,
+         });
+       }, 3500);
+     }
    }
 
 
@@ -345,6 +372,8 @@ changeBackground = (color) => {
           showPeeps: true,
       });
     }, 1000);
+
+    this.checkDone();
   }
 
 
@@ -449,6 +478,7 @@ changeBackground = (color) => {
     setTimeout(() => {
       this.setState({
         AAnswer: true,
+
       });
     }, 500);
   }
@@ -462,6 +492,7 @@ changeBackground = (color) => {
     setTimeout(() => {
       this.setState({
         LAnswer: true,
+
       });
     }, 500);
   }
@@ -514,6 +545,7 @@ changeBackground = (color) => {
       setTimeout(() => {
         this.setState({
           SAnswer: true,
+
         });
       }, 500);
     }
@@ -529,6 +561,7 @@ changeBackground = (color) => {
       setTimeout(() => {
         this.setState({
           NAnswer: true,
+
         });
       }, 500);
     }
@@ -542,6 +575,7 @@ changeBackground = (color) => {
       setTimeout(() => {
         this.setState({
           RAnswer: true,
+          
         });
       }, 500);
     }
@@ -624,7 +658,14 @@ render() {
         </div>
       : null}
 
-
+      {this.state.showEnd ?
+        <div className = {this.state.showEnd ? 'fadeIn' : 'fadeOut'}>
+        <div className = 'endWrapper'>
+        <img className = "end" src = {end}/>
+        <img className = "endButton" src = {endButton}/>
+        </div>
+        </div>
+        : null}
 
 
       {this.state.showHex ?
