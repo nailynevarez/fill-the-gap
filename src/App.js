@@ -39,6 +39,8 @@ import about2 from './about2.png';
 import about3 from './about3.png';
 import end from './end.png';
 import endButton from './endButton.png';
+import IntroKids from './kids.png';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 
 class App extends React.Component {
@@ -611,11 +613,6 @@ render() {
     <audio src={sound}  controlsList='nodownload'  autoPlay loop/>
     {this.state.introTextFade ?
     <div className = {this.state.introTextFade ? 'fadeIn' : 'fadeOut'}>
-      <div className = "IntroTitleDiv">
-      <img className = "IntroTitle" src = {IntroTitle}/>
-      </div>
-
-
       <div className = "IntroStatementDiv">
       <img className = "IntroStatement" src = {Statement}/>
       </div>
@@ -626,6 +623,7 @@ render() {
     {this.state.isIntroButton ?
     <div className = {this.state.isIntroButton ? 'fadeIn' : 'fadeOut'} >
     <div className = "IntroButtonDiv">
+      <img className = "IntroKids" src = {IntroKids}/>
       <img className = "IntroButton" src = {IntroButton} onClick = {this.handleIntroButtonClick.bind(this)}/>
       </div>
     </div>
@@ -643,7 +641,7 @@ render() {
       <div className = "navs">
         <nav><a onClick = {this.handleHomeClick.bind(this)}>Home</a></nav>
         <nav><a onClick = {this.handleAboutClick.bind(this)}>About</a></nav>
-        <nav><a>Get Involved</a></nav>
+        <nav><a href = 'https://docs.google.com/forms/d/e/1FAIpQLSeSuKkLroYe5qrfBZ238cioVekMHli2OJrS-8FZHvi2aORG1A/viewform?usp=sf_link'>Get Involved</a></nav>
       </div>
       </main>
 
@@ -653,9 +651,10 @@ render() {
       {this.state.isAboutActive ?
         <div className = {this.state.isAboutActive ? 'fadeIn' : 'fadeOut'}>
         <div className = 'aboutDiv'>
+        <p className = 'aboutTitle'>About Caminos</p>
         <img className = 'about1' src = {about1}/>
-        <img className = 'about3' src = {about3}/>
         <img className = 'about2' src = {about2}/>
+        <img className = 'about3' src = {about3}/>
         </div>
         </div>
       : null}
